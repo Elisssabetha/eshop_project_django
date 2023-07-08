@@ -1,100 +1,39 @@
-<!doctype html>
+{% extends "catalog/base.html" %}
+{% block title %} Contacts {% endblock title %}
+{% block content %}
 
-<html lang="en">
-
-
-<!-- Информация для браузера -->
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <style>
-   .round {
-   width: 40px; height: 40px;
-   border-radius: 50%;
-   }
-
-
-
-    </style>
-    <title>Main page</title>
-</head>
-
-
-<body>
-
-<!-- Описание тела документа -->
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-            <div class="card bg-dark">
-                <div class="card-body text-white">
-                    <h3>Skyshop</h3>
-                    <hr>
-                    <button type="button" class="btn btn-outline-primary text-white border-0">&#127968 Главная
-                    </button>
-                    <button type="button" class="btn btn-outline-primary text-white border-0">&#128218 Категории
-                    </button>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-outline-primary text-white border-0">&#128467 Заказы
-                        </button>
+<div class="col">
+    <div class="row mt-5">
+        <h3 align="center">Контакты</h3>
+        <div class="row mt-5">
+            <div class="col-5">
+                <form method="post">
+                    {% csrf_token %}
+                    <p>Имя</p>
+                    <input type="text" name="name" class="form-control">
+                    <p style="margin-top:20px">Почта</p>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail"
+                               aria-describedby="emailHelp">
                     </div>
-                    <button type="button" class="btn btn-outline-primary text-white border-0">&#9742 Контакты
-                    </button>
-
-                    <div style="margin-top:350px" class="row">
-                        <div class="col-3">
-                            <img
-                                    src="https://gamerwall.pro/uploads/posts/2022-09/1662447336_1-gamerwall-pro-p-koshka-s-grustnimi-glazami-krasivo-1.jpg"
-                                    class="round"></div>
-                        <div class="col-9">
-                            <select class="form-select bg-dark text-white border-0" aria-label="Default select example">
-                                <option selected>Пользователь</option>
-                                <option value="1">Профиль</option>
-                                <option value="2">Выход</option>
-                            </select>
-                        </div>
+                    <p style="margin-top:20px">Сообщение</p>
+                    <textarea name="message" class="form-control" id="exampleFormControlTextarea"
+                              rows="3"></textarea>
+                    <div class="col-6 mt-3">
+                        <input type="submit" class="btn btn-primary form-control" value="Отправить"/>
                     </div>
-                </div>
+
+                </form>
             </div>
-        </div>
-        <div class="col">
-            <div class="row mt-5">
-                <h3 align="center">Контакты</h3>
-                <div class="row mt-5">
-                    <div class="col-5">
-                        <form method="post">
-                           {% csrf_token %}
-                            <p>Имя</p>
-                            <input type="text" name="name" class="form-control">
-                            <p style="margin-top:20px">Почта</p>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail"
-                                   aria-describedby="emailHelp">
-                            <p style="margin-top:20px">Сообщение</p>
-                            <textarea name="message" class="form-control" id="exampleFormControlTextarea"
-                                      rows="3"></textarea>
-                            <div class="col-6 mt-3">
-                                <input type="submit" class="btn btn-primary form-control" value="Отправить"/>
-                            </div>
+            <div style="margin-left:70px" class="col-5 ">
+                <h4>Наши контакты</h4>
+                <p>Здесь находится текст с информацией о наших контактных данных, через которые вы можете с нами
+                    связаться</p>
+                <p>Have a nice day! :)</p>
 
-                        </form>
-                    </div>
-                    <div style="margin-left:70px" class="col-5 ">
-                        <h4>Наши контакты</h4>
-                        <p>Здесь находится текст с информацией о наших контактных данных, через которые вы можете с нами
-                            связаться</p>
-                        <p>Have a nice day! :)</p>
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
-</body>
-
-</html>
+{% endblock content %}
