@@ -2,46 +2,24 @@
 {% block title %} Homepage {% endblock title %}
 {% block content %}
 
-<div class="col">
-    <div class="row mt-5">
-        <h3 align="center">Главная</h3>
-        <p class="text-muted" align="center">Вы находитесь на сайте, предназначенном для продажи товаров
-        </p>
 
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-header" align="center">Товар 1</h5>
-                    <h2 align="center">$ 100</h2>
-                    <p class="card-text"> 10 Users included, 2GB of storage, Email support, Help center
-                        access</p>
-                </div>
-                <button type="button" class="btn btn-outline-primary">Купить</button>
+<p class="text-muted" align="center">Вы находитесь на сайте, предназначенном для продажи товаров
+</p>
 
+<div class="row">
+    {% for object in object_list %}
+    <div class="col-4">
+        <div class="card" style="height: 250px ">
+            <div class="card-body">
+                <h5 class="card-header" align="center"> {{ object.product_name }}</h5>
+                <h4 style="margin-top:20px" align="center"> {{ object.price }} руб</h4>
+                <p class="card-text"> {{ object.product_description }} </p>
             </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-header" align="center">Товар 2</h5>
-                    <h2 align="center">$ 100</h2>
-                    <p class="card-text"> 10 Users included, 2GB of storage, Email support, Help center
-                        access</p>
-                </div>
-                <button type="button" class="btn btn-outline-primary" align="center">Купить</button>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-header" align="center">Товар 3</h5>
-                    <h2 align="center">$ 100</h2>
-                    <p class="card-text"> 10 Users included, 2GB of storage, Email support, Help center
-                        access</p>
-                </div>
-                <button type="button" class="btn btn-outline-primary">Купить</button>
-            </div>
+            <button type="button" class="btn btn-outline-primary">Купить</button>
         </div>
     </div>
+
+
+    {% endfor %}
 </div>
 {% endblock content %}
