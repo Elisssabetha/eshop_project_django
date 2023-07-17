@@ -13,7 +13,7 @@
             <div class="card-body">
                 <h5 class="card-header" align="center"> {{ object.product_name }}</h5>
                 <h4 style="margin-top:20px" align="center"> {{ object.price }} руб</h4>
-                <p class="card-text" > {{ object.product_description| slice:":101" }} </p>
+                <p class="card-text" > {{ object.product_description|truncatechars:100 }} </p>
             </div>
             <button type="button" class="btn btn-outline-primary">Купить</button>
         </div>
