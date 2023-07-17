@@ -1,0 +1,125 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "product_name": "Бита PH1 25mm",
+      "product_description": "PH c 6.3 1/4\"",
+      "preview": "products/0614176735.jpg",
+      "category": 1,
+      "price": "46.00",
+      "date_of_creation": "2023-07-13T09:09:37Z",
+      "last_modified_date": "2023-07-13T09:09:40Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "product_name": "Отвертка шлицевая",
+      "product_description": "Стальной стержень, покрытие сатин-хром",
+      "preview": "products/m0001037109_1.JPG",
+      "category": 1,
+      "price": "322.00",
+      "date_of_creation": "2023-07-13T09:13:11Z",
+      "last_modified_date": "2023-07-13T09:13:13Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "product_name": "Сверло спиральное HSS D3.5mm",
+      "product_description": "Для сверления на глубину до 5 диаметров",
+      "preview": "products/12453258.jpg",
+      "category": 2,
+      "price": "58.00",
+      "date_of_creation": "2023-07-13T09:14:34Z",
+      "last_modified_date": "2023-07-13T09:14:36Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "product_name": "Герметик",
+      "product_description": "Силиконовый нейтральный 300мл",
+      "preview": "products/08925302.jpg",
+      "category": 3,
+      "price": "510.00",
+      "date_of_creation": "2023-07-13T09:16:16Z",
+      "last_modified_date": "2023-07-13T09:16:18Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "product_name": "Перчатки CUT4 Size 8",
+      "product_description": "Противопорезные перчатки",
+      "preview": "products/27008378.jpg",
+      "category": 4,
+      "price": "572.00",
+      "date_of_creation": "2023-07-13T09:18:13Z",
+      "last_modified_date": "2023-07-13T09:18:15Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "product_name": "Очки защитные",
+      "product_description": "Открытые очки из ударопрочного поликарбоната. Желтого цвета. Производитель \"Еланпласт\" (Россия), продается под торговой маркой WR",
+      "preview": "products/dsc7796.jpg",
+      "category": 4,
+      "price": "177.00",
+      "date_of_creation": "2023-07-13T09:20:33Z",
+      "last_modified_date": "2023-07-13T09:20:36Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "product_name": "Отрезной диск",
+      "product_description": "Прочный отрезной диск с высокими показателями производительности",
+      "preview": "",
+      "category": 2,
+      "price": "264.00",
+      "date_of_creation": "2023-07-15T12:37:24Z",
+      "last_modified_date": "2023-07-15T12:37:28Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "category_name": "Ручной инструмент",
+      "category_description": "товары ручного инструмента"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "category_name": "Режущий инструмент",
+      "category_description": "товары режущего инструмента"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "category_name": "Химия",
+      "category_description": "промышленная химия"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "category_name": "СИЗ",
+      "category_description": "Средства индивидуальной защиты"
+    }
+  }
+]
