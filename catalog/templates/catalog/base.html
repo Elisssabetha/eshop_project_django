@@ -22,6 +22,11 @@
 
    }
 
+
+
+
+
+
     </style>
     <title>{% block title %} Title {% endblock title %}</title>
 </head>
@@ -31,20 +36,7 @@
         <div class="col-3">
             <div class="card bg-dark">
                 <div class="card-body text-white">
-                    <h3>Skyshop</h3>
-                    <hr>
-                    <a href="/" class="butn btn-outline-primary mt-5">&#127968 Главная
-                    </a>
-
-                    <button type="button" class="btn btn-outline-primary text-white border-0">&#128218 Категории
-                    </button>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-outline-primary text-white border-0">&#128467 Заказы
-                        </button>
-                    </div>
-                    <a href="/contacts/" class="butn btn-outline-primary mt-5"> &#9742 Контакты </a>
-
-
+                    {% include 'catalog/includes/inc_catalog_menu.html' %}
                     <div style="margin-top:350px" class="row">
                         <div class="col-3">
                             <img
@@ -61,7 +53,12 @@
                 </div>
             </div>
         </div>
-        {% block content %}{% endblock content %}
+        <div class="col">
+            <div class="row mt-5">
+                <h3 align="center">{{ title }}</h3>
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
     </div>
 </div>
 </body>
