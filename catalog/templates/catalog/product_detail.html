@@ -6,12 +6,15 @@
 <div class="col-7">
     <div class="card">
         <div class="card-body">
-            <img src="{{ object.preview|mediapath}}"
-                 class="card-img-top">
-            <h5><p class="card-title"> {{ object.product_name }} </p></h5>
+            {% if object.preview %}
+                <img src="{{ object.preview|mediapath}}" class="card-img-top">
+                {% else %}
+                <img src="/media/skoro-foto-650x650.jpg" class="card-img-top">
+                {%endif%}
+            <h5><p class="card-title"> {{ object.name }} </p></h5>
             <h6><p class="card-text">Цена: {{ object.price }} руб</p></h6>
             <p>{{ object.category }}</p>
-            <p>{{ object.product_description }}</p>
+            <p>{{ object.description }}</p>
             <div class="row">
                 <div class="col-3">
                     <div class="btn-group" role="group" aria-label="Basic outlined example">

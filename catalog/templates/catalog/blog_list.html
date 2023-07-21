@@ -18,7 +18,7 @@
                 <p>{{ object.content|truncatechars:100 }}</p>
                 <div class="row">
                     <div class="col-3">
-                            <a href="{% url 'view_blog' object.pk %}" class="btn btn-outline-secondary">View</a>
+                        <a href="{% url 'view_blog' object.slug %}" class="btn btn-outline-secondary">View</a>
                     </div>
                 </div>
             </div>

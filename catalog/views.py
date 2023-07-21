@@ -34,7 +34,7 @@ class ProductDetailView(DetailView):
 
 class ProductUpdateView(UpdateView):
     model = Product
-    fields = ('product_name', 'product_description', 'preview', 'price')
+    fields = ('name', 'description', 'preview', 'price')
     success_url = reverse_lazy('product_list')
 
 
@@ -65,7 +65,7 @@ class BlogUpdateView(UpdateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('view_blog', args=[self.kwargs.get('pk')])
+        return reverse('view_blog', args=[self.kwargs.get('slug')])
 
 
 class BlogListView(ListView):
@@ -89,7 +89,7 @@ class BlogDetailView(DetailView):
 
         self.object = super().get_object(queryset)
         self.object.views_count += 1
-        self.object.save()
+        self.object.save(update_fields=['views_count'])
         return self.object
 
 

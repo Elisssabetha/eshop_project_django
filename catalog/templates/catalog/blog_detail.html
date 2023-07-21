@@ -6,11 +6,11 @@
 
         <div class="col-6">
             <div class="card">
-                <img src="{{ object.image|mediapath}}"
-                     class="card-img-top">
+                {% if object.image %}
+                <img src="{{ object.image|mediapath}}" class="card-img-top">
+                {% endif %}
                 <div class="card-header">
                     <h3 class="card-title"> {{object.title}} </h3>
-                    <h6> ({{ object.slug }})</h6>
                 </div>
                 <div class="card-body">
                     <p>
@@ -19,9 +19,9 @@
                     <div class="col-6">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="{% url 'edit_blog' object.pk %}"
+                                <a href="{% url 'edit_blog' object.slug %}"
                                    class="btn btn-sm btn-outline-secondary">Edit</a>
-                                <a href="{% url 'delete_blog' object.pk %}"
+                                <a href="{% url 'delete_blog' object.slug %}"
                                    class="btn btn-sm btn-outline-danger">Delete</a>
                             </div>
                         </div>

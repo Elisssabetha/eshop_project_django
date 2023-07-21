@@ -5,17 +5,17 @@ from catalog.models import Product, Category, Blog
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product_name', 'price', 'category')
+    list_display = ('id', 'name', 'price', 'category')
     list_filter = ('category', )
-    search_fields = ('product_name', 'description')
+    search_fields = ('name', 'description')
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'category_name')
+    list_display = ('id', 'category')
 
 
 @admin.register(Blog)
-class CategoryAdmin(admin.ModelAdmin):
+class BlogAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'content',)
 

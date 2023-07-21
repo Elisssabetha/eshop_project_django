@@ -4,8 +4,8 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class Product(models.Model):
-    product_name = models.CharField(max_length=250, verbose_name='Название продукта')
-    product_description = models.TextField(verbose_name='Описание')
+    name = models.CharField(max_length=250, verbose_name='Название продукта')
+    description = models.TextField(verbose_name='Описание')
     preview = models.ImageField(upload_to='products/', verbose_name='Изображение', **NULLABLE)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория')
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Цена', **NULLABLE)
@@ -14,7 +14,7 @@ class Product(models.Model):
                                               verbose_name='Дата последнего изменения')
 
     def __str__(self):
-        return f'{self.product_name} - {self.price}'
+        return f'{self.name} - {self.price}'
 
     class Meta:
         verbose_name = 'Товар'
@@ -22,11 +22,11 @@ class Product(models.Model):
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=100, verbose_name='Категории')
-    category_description = models.TextField(verbose_name='Описание')
+    category = models.CharField(max_length=100, verbose_name='Категории')
+    description = models.TextField(verbose_name='Описание')
 
     def __str__(self):
-        return f'{self.category_name}'
+        return f'{self.category}'
 
     class Meta:
         verbose_name = 'Категория'
@@ -40,7 +40,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog_preview/', **NULLABLE, verbose_name='Превью (изображение)')
     created_date = models.DateField(auto_now_add=True, verbose_name='Дата создания')
     is_published = models.BooleanField(default=True, verbose_name='Признак публикации')
-    views_count = models.IntegerField(default=0, verbose_name='Количество просмотров')
+    views_count = models.PositiveIntegerField(default=0, editable=False, verbose_name='Количество просмотров')
 
     def __str__(self):
         return self.title
