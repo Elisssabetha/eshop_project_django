@@ -1,0 +1,29 @@
+{% extends "catalog/base.html" %}
+{% block title %} Blog {% endblock title %}
+{% block content %}
+{% load tags_filters %}
+
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary" href="{% url 'create_blog' %}">Добавить блоговую запись</a>
+</div>
+
+
+<div style="margin-left:50px" class="row mt-3">
+    {% for object in object_list %}
+    <div class="col-5">
+        <div class="card">
+            <div class="card-body">
+                <h5><p class="card-title"> {{ object.title }} </p></h5>
+
+                <p>{{ object.content|truncatechars:100 }}</p>
+                <div class="row">
+                    <div class="col-3">
+                        <a href="{% url 'view_blog' object.slug %}" class="btn btn-outline-secondary">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

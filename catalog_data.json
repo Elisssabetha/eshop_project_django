@@ -3,8 +3,8 @@
     "model": "catalog.product",
     "pk": 1,
     "fields": {
-      "product_name": "Бита PH1 25mm",
-      "product_description": "PH c 6.3 1/4\"",
+      "name": "Бита PH1 25mm",
+      "description": "PH c 6.3 1/4\"",
       "preview": "products/0614176735.jpg",
       "category": 1,
       "price": "46.00",
@@ -16,8 +16,8 @@
     "model": "catalog.product",
     "pk": 2,
     "fields": {
-      "product_name": "Отвертка шлицевая",
-      "product_description": "Стальной стержень, покрытие сатин-хром",
+      "name": "Отвертка шлицевая",
+      "description": "Стальной стержень, покрытие сатин-хром",
       "preview": "products/m0001037109_1.JPG",
       "category": 1,
       "price": "322.00",
@@ -29,8 +29,8 @@
     "model": "catalog.product",
     "pk": 3,
     "fields": {
-      "product_name": "Сверло спиральное HSS D3.5mm",
-      "product_description": "Для сверления на глубину до 5 диаметров",
+      "name": "Сверло спиральное HSS D3.5mm",
+      "description": "Для сверления на глубину до 5 диаметров",
       "preview": "products/12453258.jpg",
       "category": 2,
       "price": "58.00",
@@ -42,8 +42,8 @@
     "model": "catalog.product",
     "pk": 4,
     "fields": {
-      "product_name": "Герметик",
-      "product_description": "Силиконовый нейтральный 300мл",
+      "name": "Герметик",
+      "description": "Силиконовый нейтральный 300мл",
       "preview": "products/08925302.jpg",
       "category": 3,
       "price": "510.00",
@@ -55,8 +55,8 @@
     "model": "catalog.product",
     "pk": 5,
     "fields": {
-      "product_name": "Перчатки CUT4 Size 8",
-      "product_description": "Противопорезные перчатки",
+      "name": "Перчатки CUT4 Size 8",
+      "description": "Противопорезные перчатки",
       "preview": "products/27008378.jpg",
       "category": 4,
       "price": "572.00",
@@ -68,8 +68,8 @@
     "model": "catalog.product",
     "pk": 6,
     "fields": {
-      "product_name": "Очки защитные",
-      "product_description": "Открытые очки из ударопрочного поликарбоната. Желтого цвета. Производитель \"Еланпласт\" (Россия), продается под торговой маркой WR",
+      "name": "Очки защитные",
+      "description": "Открытые очки из ударопрочного поликарбоната. Желтого цвета. Производитель \"Еланпласт\" (Россия), продается под торговой маркой WR",
       "preview": "products/dsc7796.jpg",
       "category": 4,
       "price": "177.00",
@@ -81,8 +81,8 @@
     "model": "catalog.product",
     "pk": 7,
     "fields": {
-      "product_name": "Отрезной диск",
-      "product_description": "Прочный отрезной диск с высокими показателями производительности",
+      "name": "Отрезной диск",
+      "description": "Прочный отрезной диск с высокими показателями производительности",
       "preview": "",
       "category": 2,
       "price": "264.00",
@@ -94,32 +94,58 @@
     "model": "catalog.category",
     "pk": 1,
     "fields": {
-      "category_name": "Ручной инструмент",
-      "category_description": "товары ручного инструмента"
+      "category": "Ручной инструмент",
+      "description": "товары ручного инструмента"
     }
   },
   {
     "model": "catalog.category",
     "pk": 2,
     "fields": {
-      "category_name": "Режущий инструмент",
-      "category_description": "товары режущего инструмента"
+      "category": "Режущий инструмент",
+      "description": "товары режущего инструмента"
     }
   },
   {
     "model": "catalog.category",
     "pk": 3,
     "fields": {
-      "category_name": "Химия",
-      "category_description": "промышленная химия"
+      "category": "Химия",
+      "description": "промышленная химия"
     }
   },
   {
     "model": "catalog.category",
     "pk": 4,
     "fields": {
-      "category_name": "СИЗ",
-      "category_description": "Средства индивидуальной защиты"
+      "category": "СИЗ",
+      "description": "Средства индивидуальной защиты"
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "Поступление силового инструмента",
+      "slug": "postuplenie-silovogo-instrumenta",
+      "content": "В конце июля ожидается поставка нового силового инструмента под брендом WR, а также запчастей к ним",
+      "image": "blog_preview/22406134.jpg",
+      "created_date": "2023-07-18",
+      "is_published": true,
+      "views_count": 18
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "Расширение ассортимента сверл",
+      "slug": "rasshirenie-assortimenta-sverl",
+      "content": "В сентябре ожидается поступление расширенного размерного ряда сверл",
+      "image": "",
+      "created_date": "2023-07-18",
+      "is_published": true,
+      "views_count": 8
     }
   }
 ]
