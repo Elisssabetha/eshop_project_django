@@ -1,14 +1,17 @@
 {% extends "catalog/base.html" %}
 {% block title %} Homepage {% endblock title %}
 {% block content %}
-
+{% load tags_filters %}
 
 <p class="text-muted" align="center">Вы находитесь на сайте, предназначенном для продажи товаров
 </p>
 
-{% load tags_filters %}
 
-<div style="margin-left:50px" class="row md-5">
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary" href="{% url 'product_create' %}"> Добавить товар </a>
+</div>
+
+<div style="margin-left:50px" class="row mb-5">
     {% for object in object_list %}
     <div class="col-5">
         <div class="card">
@@ -27,6 +30,14 @@
                         <a href="{% url 'product_view' object.pk %}" class="btn btn-outline-secondary">View</a>
                     </div>
                 </div>
+
+                {% for version_item in object.version_set.all %}
+                {% if version_item.is_actual %}
+                <div class="card-footer">
+                    <p>Актуальная версия: {{ version_item.name }} - номер {{ version_item.version_number }} </p>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

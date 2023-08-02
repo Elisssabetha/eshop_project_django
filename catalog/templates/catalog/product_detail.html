@@ -19,7 +19,7 @@
                 <div class="col-3">
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="{% url 'product_edit' object.pk %}" class="btn btn-outline-secondary">Edit</a>
-                        <button type="button" class="btn btn-outline-secondary">Delete</button>
+                        <a href="{% url 'product_delete' object.pk %}" class="btn btn-outline-secondary">Delete</a>
                     </div>
                 </div>
                 <div class="col text-secondary">
