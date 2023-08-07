@@ -1,5 +1,7 @@
 from django.db import models
 
+from config import settings
+
 NULLABLE = {'blank': True, 'null': True}
 
 
@@ -12,7 +14,7 @@ class Product(models.Model):
     date_of_creation = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name='Дата создания')
     last_modified_date = models.DateTimeField(auto_now=True, auto_now_add=False,
                                               verbose_name='Дата последнего изменения')
-
+    vendor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Продавец')
     def __str__(self):
         return f'{self.name} - {self.price}'
 

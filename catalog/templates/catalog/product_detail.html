@@ -15,15 +15,20 @@
             <h6><p class="card-text">Цена: {{ object.price }} руб</p></h6>
             <p>{{ object.category }}</p>
             <p>{{ object.description }}</p>
+            {% if object.vendor %}
+            <p>{{ object.vendor }}</p>
+            {% endif %}
             <div class="row">
-                <div class="col-3">
+                {% if user.is_authenticated %}
+                <div class="col-7">
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="{% url 'product_edit' object.pk %}" class="btn btn-outline-secondary">Edit</a>
                         <a href="{% url 'product_delete' object.pk %}" class="btn btn-outline-secondary">Delete</a>
                     </div>
                 </div>
+                {% endif %}
                 <div class="col text-secondary">
-                    <p style="margin-left:50px"> {{ object.last_modified_date }} </p>
+                    <p> {{ object.last_modified_date }} </p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,171 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Бита PH1 25mm",
+      "description": "PH c 6.3 1/4\"",
+      "preview": "products/0614176735.jpg",
+      "category": 1,
+      "price": "46.00",
+      "date_of_creation": "2023-07-13T09:09:37Z",
+      "last_modified_date": "2023-07-13T09:09:40Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Отвертка шлицевая",
+      "description": "Стальной стержень, покрытие сатин-хром",
+      "preview": "products/m0001037109_1.JPG",
+      "category": 1,
+      "price": "322.00",
+      "date_of_creation": "2023-07-13T09:13:11Z",
+      "last_modified_date": "2023-07-13T09:13:13Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Сверло спиральное HSS D3.5mm",
+      "description": "Для сверления на глубину до 5 диаметров",
+      "preview": "products/12453258.jpg",
+      "category": 2,
+      "price": "58.00",
+      "date_of_creation": "2023-07-13T09:14:34Z",
+      "last_modified_date": "2023-07-13T09:14:36Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Герметик",
+      "description": "Силиконовый нейтральный 300мл",
+      "preview": "",
+      "category": 3,
+      "price": "510.00",
+      "date_of_creation": "2023-08-02T19:04:48.794Z",
+      "last_modified_date": "2023-08-02T19:04:48.794Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Перчатки CUT4 Size 8",
+      "description": "Противопорезные перчатки",
+      "preview": "products/27008378.jpg",
+      "category": 4,
+      "price": "572.00",
+      "date_of_creation": "2023-08-02T19:36:57.326Z",
+      "last_modified_date": "2023-08-02T19:36:57.326Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Очки защитные",
+      "description": "Открытые очки из ударопрочного поликарбоната. Желтого цвета. Производитель \"Еланпласт\" (Россия), продается под торговой маркой WR",
+      "preview": "products/dsc7796.jpg",
+      "category": 4,
+      "price": "177.00",
+      "date_of_creation": "2023-08-03T21:06:21.085Z",
+      "last_modified_date": "2023-08-03T21:06:21.085Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Отрезной диск",
+      "description": "Прочный отрезной диск с высокими показателями производительности",
+      "preview": "",
+      "category": 2,
+      "price": "264.00",
+      "date_of_creation": "2023-07-15T12:37:24Z",
+      "last_modified_date": "2023-07-15T12:37:28Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "category": "Ручной инструмент",
+      "description": "товары ручного инструмента"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "category": "Режущий инструмент",
+      "description": "товары режущего инструмента"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "category": "Химия",
+      "description": "промышленная химия"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "category": "СИЗ",
+      "description": "Средства индивидуальной защиты"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 2,
+      "version_number": 1,
+      "name": "v1.0",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 5,
+      "version_number": 1,
+      "name": "Wurth",
+      "is_actual": true
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "Поступление силового инструмента",
+      "slug": "postuplenie-silovogo-instrumenta",
+      "content": "В конце июля ожидается поставка нового силового инструмента под брендом WR, а также запчастей к ним",
+      "image": "blog_preview/22406134.jpg",
+      "created_date": "2023-07-18",
+      "is_published": true,
+      "views_count": 22
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "Расширение ассортимента сверл",
+      "slug": "rasshirenie-assortimenta-sverl",
+      "content": "В сентябре ожидается поступление расширенного размерного ряда сверл",
+      "image": "",
+      "created_date": "2023-07-18",
+      "is_published": true,
+      "views_count": 19
+    }
+  }
+]
