@@ -35,14 +35,7 @@ class RegisterView(CreateView):
         new_user.is_active = False
         current_site = get_current_site(self.request)
         subject = 'Активация профиля'
-        body = render_to_string(
-            'users/email_verification.html',
-            {
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(new_user.pk)),
-                'token': email_verification_token.make_token(new_user),
-            }
-        )
+
         send_mail(
             subject=subject,
             message=f'Активируйте ваш профиль: http://{current_site.domain}/users/activate/{urlsafe_base64_encode(force_bytes(new_user.pk))}/{email_verification_token.make_token(new_user)}',
