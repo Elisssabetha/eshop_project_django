@@ -44,11 +44,11 @@
     "fields": {
       "name": "Герметик",
       "description": "Силиконовый нейтральный 300мл",
-      "preview": "",
+      "preview": "products/08925302.jpg",
       "category": 3,
       "price": "510.00",
-      "date_of_creation": "2023-08-02T19:04:48.794Z",
-      "last_modified_date": "2023-08-02T19:04:48.794Z"
+      "date_of_creation": "2023-07-13T09:16:16Z",
+      "last_modified_date": "2023-07-13T09:16:18Z"
     }
   },
   {
@@ -60,8 +60,8 @@
       "preview": "products/27008378.jpg",
       "category": 4,
       "price": "572.00",
-      "date_of_creation": "2023-08-02T19:36:57.326Z",
-      "last_modified_date": "2023-08-02T19:36:57.326Z"
+      "date_of_creation": "2023-07-13T09:18:13Z",
+      "last_modified_date": "2023-07-13T09:18:15Z"
     }
   },
   {
@@ -73,8 +73,8 @@
       "preview": "products/dsc7796.jpg",
       "category": 4,
       "price": "177.00",
-      "date_of_creation": "2023-08-03T21:06:21.085Z",
-      "last_modified_date": "2023-08-03T21:06:21.085Z"
+      "date_of_creation": "2023-07-13T09:20:33Z",
+      "last_modified_date": "2023-07-13T09:20:36Z"
     }
   },
   {
@@ -133,16 +133,6 @@
     }
   },
   {
-    "model": "catalog.version",
-    "pk": 2,
-    "fields": {
-      "product": 5,
-      "version_number": 1,
-      "name": "Wurth",
-      "is_actual": true
-    }
-  },
-  {
     "model": "catalog.blog",
     "pk": 1,
     "fields": {
@@ -152,7 +142,7 @@
       "image": "blog_preview/22406134.jpg",
       "created_date": "2023-07-18",
       "is_published": true,
-      "views_count": 22
+      "views_count": 18
     }
   },
   {
@@ -165,7 +155,7 @@
       "image": "",
       "created_date": "2023-07-18",
       "is_published": true,
-      "views_count": 19
+      "views_count": 8
     }
   }
 ]

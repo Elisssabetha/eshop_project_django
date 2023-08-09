@@ -1,0 +1,39 @@
+{% extends "catalog/base.html" %}
+{% block title %} Products {% endblock title %}
+{% block content %}
+{% load tags_filters %}
+
+<div class="col-7">
+    <div class="card">
+        <div class="card-body">
+            {% if object.preview %}
+                <img src="{{ object.preview|mediapath}}" class="card-img-top">
+                {% else %}
+                <img src="/media/skoro-foto-650x650.jpg" class="card-img-top">
+                {%endif%}
+            <h5><p class="card-title"> {{ object.name }} </p></h5>
+            <h6><p class="card-text">Цена: {{ object.price }} руб</p></h6>
+            <p>{{ object.category }}</p>
+            <p>{{ object.description }}</p>
+            {% if object.vendor %}
+            <p>{{ object.vendor }}</p>
+            {% endif %}
+            <div class="row">
+                {% if user.is_authenticated %}
+                <div class="col-7">
+                    <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <a href="{% url 'product_edit' object.pk %}" class="btn btn-outline-secondary">Edit</a>
+                        <a href="{% url 'product_delete' object.pk %}" class="btn btn-outline-secondary">Delete</a>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="col text-secondary">
+                    <p> {{ object.last_modified_date }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

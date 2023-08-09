@@ -22,6 +22,14 @@
 
    }
 
+
+
+
+
+
+
+
+
     </style>
     <title>{% block title %} Title {% endblock title %}</title>
 </head>
@@ -31,37 +39,32 @@
         <div class="col-3">
             <div class="card bg-dark">
                 <div class="card-body text-white">
-                    <h3>Skyshop</h3>
-                    <hr>
-                    <a href="/" class="butn btn-outline-primary mt-5">&#127968 Главная
-                    </a>
-
-                    <button type="button" class="btn btn-outline-primary text-white border-0">&#128218 Категории
-                    </button>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-outline-primary text-white border-0">&#128467 Заказы
-                        </button>
-                    </div>
-                    <a href="/contacts/" class="butn btn-outline-primary mt-5"> &#9742 Контакты </a>
-
-
+                    {% include 'catalog/includes/inc_catalog_menu.html' %}
                     <div style="margin-top:350px" class="row">
+                        {% if user.is_authenticated %}
                         <div class="col-3">
                             <img
                                     src="https://gamerwall.pro/uploads/posts/2022-09/1662447336_1-gamerwall-pro-p-koshka-s-grustnimi-glazami-krasivo-1.jpg"
                                     class="round"></div>
                         <div class="col-9">
-                            <select class="form-select bg-dark text-white border-0" aria-label="Default select example">
-                                <option selected>Пользователь</option>
-                                <option value="1">Профиль</option>
-                                <option value="2">Выход</option>
-                            </select>
+                            <a href="{% url 'users:profile' %}" class="butn btn-outline-dark mt-5"> Профиль: {{user.first_name}} </a>
+                            <p></p>
+                            <a href="{% url 'users:logout' %}" class="butn btn-outline-dark mt-5"> Выход </a>
                         </div>
+                        {% else %}
+                        <a href="{% url 'users:login' %}" class="butn btn-outline-dark mt-5"> Вход </a>
+                        <a href="{% url 'users:register' %}" class="butn btn-outline-dark mt-5"> Регистрация </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-        {% block content %}{% endblock content %}
+        <div class="col">
+            <div class="row mt-5">
+                <h3 align="center">{{ title }}</h3>
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
     </div>
 </div>
 </body>
