@@ -123,6 +123,16 @@
     }
   },
   {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 2,
+      "version_number": 1,
+      "name": "v1.0",
+      "is_actual": true
+    }
+  },
+  {
     "model": "catalog.blog",
     "pk": 1,
     "fields": {

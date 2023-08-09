@@ -9,8 +9,8 @@ class Product(models.Model):
     preview = models.ImageField(upload_to='products/', verbose_name='Изображение', **NULLABLE)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория')
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Цена', **NULLABLE)
-    date_of_creation = models.DateTimeField(auto_now=False, auto_now_add=False, verbose_name='Дата создания')
-    last_modified_date = models.DateTimeField(auto_now=False, auto_now_add=False,
+    date_of_creation = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name='Дата создания')
+    last_modified_date = models.DateTimeField(auto_now=True, auto_now_add=False,
                                               verbose_name='Дата последнего изменения')
 
     def __str__(self):
@@ -31,6 +31,20 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    version_number = models.PositiveIntegerField(verbose_name='Номер версии')
+    name = models.CharField(max_length=150, verbose_name='Название версии')
+    is_actual = models.BooleanField(verbose_name='Признак текущей версии')
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name = 'Версия'
+        verbose_name_plural = 'Версии'
 
 
 class Blog(models.Model):
