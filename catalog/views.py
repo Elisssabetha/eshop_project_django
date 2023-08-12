@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.cache import cache
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
@@ -6,7 +8,31 @@ from django.views.generic import ListView, TemplateView, DetailView, UpdateView,
 from pytils.translit import slugify
 
 from catalog.forms import ProductForm, VersionForm
-from catalog.models import Product, Blog, Version
+from catalog.models import Product, Blog, Version, Category
+from catalog.services import get_cache_categories
+
+
+class CategoryListView(ListView):
+    model = Category
+    queryset = get_cache_categories()
+
+
+class CategoryProductListView(ListView):
+    model = Product
+    template_name = 'catalog/product_list.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(category_id=self.kwargs.get('pk'))
+        return queryset
+
+    def get_context_data(self, *args, **kwargs):
+        context_data = super().get_context_data(*args, **kwargs)
+
+        category_item = Category.objects.get(pk=self.kwargs.get('pk'))
+        context_data['category_pk'] = category_item.pk
+        context_data['title'] = f'{category_item.category}'
+        return context_data
 
 
 class ProductListView(ListView):
@@ -26,9 +52,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('product_list')
     login_url = 'users:login'
 
-
     def form_valid(self, form):
-
         self.object = form.save()
         self.object.vendor = self.request.user
         self.object.save()
@@ -39,7 +63,6 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForm
     login_url = 'users:login'
-
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
