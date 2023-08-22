@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView as BaseLoginView, PasswordResetView, PasswordResetConfirmView, \
     PasswordResetDoneView, PasswordResetCompleteView
 from django.contrib.auth.views import LogoutView as BaseLogoutView
-from django.template.loader import render_to_string
+
 from django.urls import reverse_lazy, reverse
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -104,6 +104,7 @@ class CustomPasswordResetDoneView(PasswordResetDoneView):
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'users/password_reset_complete.html'
+
 
 class UserUpdateView(UpdateView):
     model = User

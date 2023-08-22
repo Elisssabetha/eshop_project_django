@@ -51,11 +51,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'catalog.apps.CatalogConfig',
-    'mailing.apps.MailingConfig',
+    # 'mailing.apps.MailingConfig',
     'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -146,6 +148,15 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'liza_minyaeva@mail.ru'
+EMAIL_HOST_USER = get_env_values('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = get_env_values('EMAIL_HOST_PASSWORD')
 EMAIL_USE_SSL = True
+
+CACHE_ENABLE = get_env_values('CACHE_ENABLE') == '1'
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": get_env_values('CACHES_LOCATION'),
+    }
+}
