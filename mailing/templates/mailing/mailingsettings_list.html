@@ -1,0 +1,62 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+{% include 'mailing/includes/inc_buttons.html' %}
+<div class="row">
+    <div class="col-12 mb-5">
+        <a href="{% url 'mailing:mailing_create' %}" class="btn btn-success float-end">
+            Создать рассылку
+        </a>
+    </div>
+    <div class="col-12">
+        <div class="row mb-5">
+            {% for item in object_list %}
+            <div class="col-6 mb-5">
+                <div class="card">
+                    <div class="card-header"> Рассылка #{{ item.pk }}</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <td>Время начала</td>
+                                <td>{{ item.start_time|date:"d-m-Y H:i" }}</td>
+                            </tr>
+                            <tr>
+                                <td>Время окончания</td>
+                                <td>{{ item.end_time|date:"d-m-Y H:i" }}</td>
+                            </tr>
+                            <tr>
+                                <td>Период</td>
+                                <td>{{ item.get_period_display }}</td>
+                            </tr>
+                            <tr>
+                                <td>Статус</td>
+                                <td>{{ item.get_status_display }}</td>
+                            </tr>
+                            <tr>
+                                <td>Сообщение</td>
+                                <td>{{ item.message }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'mailing:mailing_clients' item.pk %}" class="btn btn-outline-secondary">Клиенты
+                            рассылки</a>
+                        <p></p>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="{% url 'mailing:mailing_update' item.pk %}"
+                                   class="btn btn-outline-secondary">Изменить</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="{% url 'mailing:mailing_delete' item.pk %}"
+                                   class="btn btn-outline-secondary">Удалить </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

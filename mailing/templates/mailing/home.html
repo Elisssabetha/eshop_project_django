@@ -1,0 +1,38 @@
+{% extends "catalog/base.html" %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+{% include 'mailing/includes/inc_buttons.html' %}
+<div class="col-12">
+    <div class="card mb-5">
+        <div class="card-header bg-dark text-white">
+            <h1>Cервис рассылок</h1>
+        </div>
+        <div class="card-body">
+            <p>Всего рассылок : {{ count_mailing }}</p>
+            <p>Активных рассылок всего : {{ count_mailing_active }}</p>
+            <p>Количество уникальных клиентов для рассылок : {{ count_unique_customers }}</p>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    {% for object in mailing_blog %}
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-header bg-dark text-white">
+                    <h5> {{ object.title }}</h5>
+                </div>
+
+                <p>{{ object.content|truncatechars:100 }}</p>
+                <!--                <div class="row">-->
+                <!--                    <div class="col-3">-->
+                <!--                        <a href="#" class="btn btn-outline-secondary">View</a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

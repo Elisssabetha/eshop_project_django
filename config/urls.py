@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('catalog.urls')),
     path('users/', include('users.urls')),
-    # path('mailing/', include('mailing.urls'))
+    path('mailing/', include('mailing.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
