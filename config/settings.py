@@ -51,12 +51,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'catalog.apps.CatalogConfig',
-    # 'mailing.apps.MailingConfig',
+    'mailing.apps.MailingConfig',
     'users.apps.UsersConfig',
+    'mailing_blog',
+
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
-    'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -64,7 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware'
+    # 'django.middleware.cache.FetchFromCacheMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -145,6 +148,7 @@ AUTH_USER_MODEL = 'users.User'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/users/'
 
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 465
@@ -160,3 +164,8 @@ CACHES = {
         "LOCATION": get_env_values('CACHES_LOCATION'),
     }
 }
+
+CRONJOBS = [
+    ('*/5 * * * *', 'mailing.services.send_mails')
+    # */1-периодичность(каждую минуту) *-час *-день месяца *-месяц *-день недели
+]

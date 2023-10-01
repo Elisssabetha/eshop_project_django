@@ -22,3 +22,8 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
+
+        # кастомное право доступа на блокировку пользователя
+        permissions = [
+            ('set_is_active', 'Can change is_active')
+        ]

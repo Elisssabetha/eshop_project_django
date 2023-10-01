@@ -1,0 +1,16 @@
+{% if user.is_authenticated %}
+<div class="col-6">
+    <div class="row">
+        <div class="col-4">
+            <a href="{% url 'mailing:mailing_list' %}" class=" btn btn-outline-dark mt-5"> Рассылки </a>
+        </div>
+        <div class="col-4">
+            <a href="{% url 'mailing:customers' %}" class="btn btn-outline-dark mt-5"> Клиенты </a>
+        </div>
+        <div class="col-4">
+            <a href="{% url 'mailing:messages' %}" class="btn btn-outline-dark mt-5"> Сообщения </a>
+        </div>
+    </div>
+</div>
+<hr>
+{% endif %}
